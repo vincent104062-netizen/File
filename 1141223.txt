@@ -1,0 +1,167 @@
+一、IP網路的基本通聯條件:
+     (一)同廣播區、同網段，會通
+     (二)不同廣播區、不同網段，要透過路由器。
+        
+      ※同廣播區、不同網段(基本網路架構下不會通)
+      ※不同廣播區，同網段(基本網路架構下不會通)
+
+
+二、IPv4網路傳播有三種方式
+    單播unicast    
+    廣播Broadcast
+    組播Multicast
+  (群組廣播)
+
+
+三、IPv6網路傳播有三種方式
+    單播unicast    
+    組播Multicast
+  (群組廣播)
+    任播anycast
+
+
+四、何謂廣播區(廣播區計算範例請參考word)
+   (一)廣播區定義
+	1.同個區域內，廣播封包最遠可達位置。
+	2.預設上「路由器」不幫忙轉發廣播封包。
+	3.預設上同Switch為同一廣播區
+   (二)標準情況下，一個廣播區需搭配一個不重複的網段。
+
+五、何謂同網段(IPv4網段範圍計算請參考word)
+
+
+六、ping不通的兩種原因
+Request timed out.           :沒人回應，可能是沒這台主機、或對方不回應、或中間防火牆擋。
+Destination host unreachable.:路由器或網路設備回應目的地不可達，通常是沒有路由到達目的。
+
+
+七、什麼預設閘道?
+    跨網段傳輸 需經過 預設閘道Default Gateway
+   (預設閘道Default Gateway通常為L3設備[路由器])
+
+八、路由器的主要功能
+    依據路由表，提供封包通聯路徑
+
+
+九、何謂路由Routing(路由哪邊走)?
+   (一)路由，不同網段的設備，要透過路由才能互通。
+   (二)路由種類
+      1.直連路由:直接與路由器連線的路由。
+            ※直連路由產生條件:
+               (1)實體Port UP
+               (2)Protocol UP(線要接對、封裝格式一致)
+               (3)IP需設定
+              do show ip interface brief   //看Port狀態
+              do show ip route             //看路由表
+ 
+      2.非直連路由:非直接與路由器連線的路由
+        (1)靜態路由:由管理者指定路徑。
+        (2)動態路由:由動態路由演算法自動算出最佳路徑。
+
+十、Interface種類介紹
+    (一)Ethernet(乙太網路)
+        Ethernet       10Mbps
+        FastEthernet   100Mbps
+        GigaEthernet   1000Mbps or 1Gbps
+        10GigaEthenet  10G
+
+    (二)Serial(PPP、HDLC序列埠)   
+
+
+十一、基礎Cisco IOS實驗
+  實驗一  直連路由
+    Router>enable                 //進入特權模式
+    Router#configure terminal     //進入設定模式
+    Router(config)#interface fastethernet0/0   //進入f0/0Port
+    Router(config-if)#no sh
+    Router(config-if)#ip address 192.168.1.254 255.255.255.0
+
+    Router(config)#interface fastethernet0/1   //進入f0/0Port
+    Router(config-if)#no sh
+    Router(config-if)#ip address 192.168.2.254 255.255.255.0
+    Router(config-if)#do show ip interface brief  //看Port狀態
+    Router(config-if)#do show ip route            //看路由表
+
+   192.168.1.0/24 PC1-2設定IP(要設預設閘道)
+   192.168.2.0/24 PC3-4設定IP(要設預設閘道)
+
+  實驗二  非直連路由(靜態路由)
+    R1>enable
+    R1#configure terminal
+    R1(config)#interface fastethernet0/0
+    R1(config-if)#no sh
+    R1(config-if)#ip address 192.168.1.254 255.255.255.0
+    R1(config)#interface s0/1/0
+    R1(config-if)#no sh
+    R1(config-if)#ip address 192.168.0.1 255.255.255.0
+
+    R2>enable
+    R2#configure terminal
+    R2(config)#interface fastethernet0/0   //進入f0/0Port
+    R2(config-if)#no sh
+    R2(config-if)#ip address 192.168.2.254 255.255.255.0
+    R2(config)#interface s0/1/0
+    R2(config-if)#no sh
+    R2(config-if)#ip address 192.168.0.2 255.255.255.0
+
+    R1(config)#ip route 192.168.2.0 255.255.255.0 192.168.0.2
+                        [網路名稱]                 [Next Hop下一跳IP]
+
+    R2(config)#ip route 192.168.1.0 255.255.255.0 192.168.0.1
+                        [網路名稱]                 [Next Hop下一跳IP]
+
+    R2(config-if)#exit    //跳回上一層
+    R2(config)#
+
+   192.168.1.0/24 PC1-2設定IP(要設預設閘道)
+   192.168.2.0/24 PC3-4設定IP(要設預設閘道)、加一台HTTP Server並嘗試將首頁名稱改成google
+     
+
+
+十二、網管方式
+    (一)近端管理(使用console)
+        1.設定參數
+          傳輸速率    :9600  bps
+          Data bit    :8 bit
+          parity      :none
+          stop bits   :1
+          flow control:none
+        2.管理登入方式要設定
+          Switch(config)#line console 0
+          Switch(config)#password cisco
+          Switch(config)#login    //使用密碼登入
+                       ※cisco 三種登入認證方式
+                               login  密碼登入
+                               login local          帳號密碼登入
+                               login authentication 外部帳號密碼登入
+         
+          
+    (二)遠端管理(用網路)
+       1.網路要設定
+          Switch需設定在VLAN的虛擬介面上、Router設定在Port上
+             Switch(config)#int vlan 1
+             Switch(config-if)#ip address 192.168.1.253 255.255.255.0
+             Switch(config-if)#no shutdown                       
+       2.管理登入方式要設定
+          Switch(config)#line vty 0 4
+          Switch(config)#password cisco
+          Switch(config)#login         
+
+
+
+
+100Mhz   赫茲         (頻率)  
+100Mbps  bit per sec  (速率)
+100MB    百萬byte     (容量) 
+
+
+軍士官班 網路建置15%   其他80%   5%英文
+
+軍官班   網路建置40%   其他55%   5%英文
+
+
+
+
+
+
+
