@@ -1,0 +1,19 @@
+一、下載GNS3 Server(VM)、GNS3 Client
+    GNS3官網下載
+
+二、安裝VMware
+    VMware官網可以下載免費版(個人使用)
+
+三(此步驟今天省略)、在VMware上新增三塊虛擬網卡 VM11(DHCP)、VM13、VM14
+
+四、在VMware掛載GNS3 Server(VM)。
+
+五、於VMware修改GNS3 Server的硬體設定(CPU、RAM、網卡四塊[VM11、VM13、VM14、NAT])。
+
+五、安裝GNS3Client
+
+六、GNS3 Server(VM)與GNS3 Client連線
+
+七、於GNS3 Server(VM)，掛載網路設備(cisco Route、Switch)
+
+七、GNS3使用內建QUME掛載KALI、跟網頁伺服器
