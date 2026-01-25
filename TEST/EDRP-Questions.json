@@ -1,0 +1,1998 @@
+[
+  {
+    "id": "Q1",
+    "chapter": "EDRP / DR Concepts",
+    "q": "ABC Inc. has a host of servers, each serving a different purpose. Almost all of them are critical to the functioning of the business. Most of the servers were virtualized and had backup virtual components. Thus, when the memory of one server crashed in the middle of a busy business day, it did not affect the operations as the server quickly switched to a different virtual memory, which was kept as a backup for this purpose precisely. What is such a feature called?",
+    "choices": [
+      "Deduplication",
+      "High Availability",
+      "Fault Tolerance",
+      "Mirroring"
+    ],
+    "answer": 2,
+    "explain": "Fault Tolerance 指的是當單一元件（如記憶體）故障時，系統仍能不中斷運作並自動切換到備援元件。"
+  },
+  {
+    "id": "Q2",
+    "chapter": "EDRP / DR Concepts",
+    "q": "Zoe is a fashion designer who owns an online retail store. She was recently named 'The Best Upcoming Fashion Designer of the Year' by a highly popular fashion magazine. Due to this recognition, the web traffic to her site greatly increased. However, the server on which her website was housed on could not handle the high amount of web traffic, which led to the crashing of the website. To resolve this issue, Zoe purchased two additional servers. Using a solution, she distributed the burden from the web traffic between the three servers, which helped in maximizing the efficiency of the servers. Which solution did Zoe use?",
+    "choices": [
+      "Load Balancing",
+      "High-Availability",
+      "Point in Time Recovery",
+      "Clustering"
+    ],
+    "answer": 0,
+    "explain": "Load Balancing 會將流量分散到多台伺服器，以提升效能與可用性。"
+  },
+  {
+    "id": "Q3",
+    "chapter": "Server Roles",
+    "q": "Which of the following services provides mail and calendar services?",
+    "choices": [
+      "Web Server",
+      "Application Server",
+      "Domain Controller",
+      "Exchange Server"
+    ],
+    "answer": 3,
+    "explain": "Exchange Server 提供企業級電子郵件與行事曆（mail + calendar）服務。"
+  },
+  {
+    "id": "Q4",
+    "chapter": "Risk Assessment",
+    "q": "Seth wants to get an approximate picture of the likelihood of the risks that were identified by his organization. After getting a high-level understanding of their probability, he could dedicate his resources to risk mitigation according to the priorities since he was a bit under-staffed. He was told that out of the identified risks, the occurrence of an earthquake was highly unlikely owing to the geography of their location. Furthermore, he learned that the chances of a fire breaking out in his building were high and his facility also faced a risk of physical intrusion but that was partly under control owing to the physical guards. What kind of risk assessment is Seth essentially conducting?",
+    "choices": [
+      "Semi-Quantitative Risk Assessment",
+      "Quantitative Risk Assessment",
+      "Qualitative Risk Assessment",
+      "Semi-Qualitative Risk Assessment"
+    ],
+    "answer": 3,
+    "explain": "題目以高/中/低等描述風險發生機率，屬於半定性（Semi-Qualitative）風險評估。"
+  },
+  {
+    "id": "Q5",
+    "chapter": "Risk Management",
+    "q": "Which of the following terms define the assessment of the risk factors and the relationship that exists between these factors?",
+    "choices": [
+      "Risk Models",
+      "Risk Mitigation",
+      "Risk Management",
+      "Risk Assessment"
+    ],
+    "answer": 0,
+    "explain": "Risk Models 用來描述風險因子以及它們之間的關係。"
+  },
+  {
+    "id": "Q6",
+    "chapter": "BCDR Metrics",
+    "q": "Richard was a cautious person, and he used to back up his organization's data daily at 8:00 pm. One day, due to a fire in his office building at 9:00 am, servers containing critical data were destroyed. It would take about 8 hours for Richard's organization to transfer the backed up data from the alternate site to the primary site. Based on the last data backup, the recovery time in this scenario is 'minus 13 hours'. What technical term best defines this time period of 13 hours?",
+    "choices": [
+      "Recovery Point Objective (RPO)",
+      "Recovery Time Objective (RTO)",
+      "Single Point of Failure (SPOF)",
+      "Maximum Acceptable Outage (MAO)"
+    ],
+    "answer": 0,
+    "explain": "RPO 指的是可接受的最大資料遺失時間，本題為 13 小時。"
+  },
+  {
+    "id": "Q7",
+    "chapter": "Standards",
+    "q": "Jess, who owns an IT firm, wants to implement the standard for societal security in the business continuity management system in her organization to reap its benefits in the future if a disaster strikes. Which of the following standards should she implement?",
+    "choices": [
+      "NFPA 1600",
+      "ISO 27005",
+      "ISO 27031",
+      "ISO 22301"
+    ],
+    "answer": 3,
+    "explain": "ISO 22301 是商業持續管理系統（BCMS）的國際標準。"
+  },
+  {
+    "id": "Q8",
+    "chapter": "DR Sites",
+    "q": "John wanted to transfer his organization's data to an alternate site. He wanted the alternate site to run in parallel to the primary site, which would allow his organization to continue normal business operations almost immediately in the event of a disruption. Which of the following sites is best suited to John's requirements?",
+    "choices": [
+      "Hot Site",
+      "Warm Site",
+      "Colocation Facilities",
+      "Cold Site"
+    ],
+    "answer": 0,
+    "explain": "Hot Site 幾乎可立即接手運作，適合需要快速復原的情境。"
+  },
+  {
+    "id": "Q9",
+    "chapter": "Storage / RAID",
+    "q": "Katie has implemented the RAID level that splits data into blocks and evenly writes the data to multiple hard drives but does not provide data redundancy. This type of RAID level requires a minimum of ____ in order to setup.",
+    "choices": [
+      "Three drives",
+      "Six drives",
+      "Two drives",
+      "Four drives"
+    ],
+    "answer": 2,
+    "explain": "RAID 0 需要至少兩顆硬碟，且不提供資料備援。"
+  },
+  {
+    "id": "Q10",
+    "chapter": "Business Analysis",
+    "q": "Jill wanted to start a food truck with her savings from her previous job. Before she did so, she wanted to make sure that it would prove to be a feasible investment. After discussing her plans with a few industry professionals, she was advised to conduct an analysis to help her decide if the business would prove to be profitable in the monetary sense. Which analysis was Jill advised to conduct?",
+    "choices": [
+      "Cost Benefit Analysis",
+      "Cost Analysis",
+      "Business Impact Analysis",
+      "Risk Analysis"
+    ],
+    "answer": 0,
+    "explain": "Cost Benefit Analysis 用來評估投資是否在金錢層面上具備可行性。"
+  },
+    {
+    "id": "Q11",
+    "chapter": "DR / Availability",
+    "q": "XYZ.com is a popular online discounts store based out of London. Due to a disaster, one of the hosting servers was destroyed, slowing the website considerably. The management feared that this would lead to a decrease in the website traffic. Fortunately, the network administrators at the organization solved the problem of the slow running of the website by routing the site traffic to the alternate hosting server based in Mumbai. What technical term best describes this scenario?",
+    "choices": [
+      "High-Availability",
+      "Global Load Balancing",
+      "Failover",
+      "Network Load Balancing"
+    ],
+    "answer": 1,
+    "explain": "Global Load Balancing 指的是在地理位置不同的資料中心之間分配或重新導向流量，例如從倫敦轉到孟買。"
+  },
+  {
+    "id": "Q12",
+    "chapter": "Data Protection",
+    "q": "Which of the following technologies is used to create a copy of data on one server on another server?",
+    "choices": [
+      "Data Replication",
+      "Snapshots",
+      "Cloud Storage",
+      "Failover Cluster"
+    ],
+    "answer": 0,
+    "explain": "Data Replication 會將資料從一台伺服器複製到另一台伺服器，以確保資料可用性。"
+  },
+  {
+    "id": "Q13",
+    "chapter": "DR Organization",
+    "q": "Which of the following teams is responsible for the implementation and execution of the disaster recovery plan, including test plans?",
+    "choices": [
+      "Operations Team",
+      "Planning Team",
+      "Technology Team",
+      "Support Team"
+    ],
+    "answer": 0,
+    "explain": "Operations Team 負責實際執行與運作，包括災難復原計畫與測試計畫。"
+  },
+  {
+    "id": "Q14",
+    "chapter": "Backup Methods",
+    "q": "To protect against a disaster or other site-specific problem, many people choose this method to back up their media. The location can be as simple as the system administrator's home office or as sophisticated as a disaster-hardened, temperature-controlled, high-security bunker that has facilities for backup media storage. Which type of backup method is being referred here?",
+    "choices": [
+      "Near-line",
+      "Offsite",
+      "Onsite",
+      "Online"
+    ],
+    "answer": 1,
+    "explain": "Offsite backup 指的是將備份媒體存放在主要營運地點以外的位置，以防止單一地點災害。"
+  },
+  {
+    "id": "Q15",
+    "chapter": "Storage / RAID",
+    "q": "Nancy is working as a network administrator for a small company. Management wants to implement a RAID storage for their organization. They want to use the appropriate RAID level for their backup plan that will satisfy the following requirements: (1) It has a parity check to store all the information about the data in multiple drives. (2) Help reconstruct the data during downtime. (3) Process the data at a good speed. (4) Should not be expensive. What RAID level will she suggest?",
+    "choices": [
+      "RAID 1",
+      "RAID 3",
+      "RAID 10",
+      "RAID 0"
+    ],
+    "answer": 1,
+    "explain": "RAID 3 使用專用同位元(parity)磁碟，可在資料遺失時重建資料，成本與效能兼顧。"
+  },
+  {
+    "id": "Q16",
+    "chapter": "Risk Management / Finance",
+    "q": "James owns a company that provides 24×7 telephonic technical support for a technology giant. During a risk assessment, he discovered that should a natural disaster strike rendering his facility defunct, he would need at least a hundred telephone lines up and running within eight hours to keep his business running. He kept aside $20,000 from the company funds for a virtual service should this scenario occur. What is this emergency fund that James kept aside called?",
+    "choices": [
+      "Risk Adjusted Return on Capital (RAROC)",
+      "Risk Adjusted Return on Risk Adjusted Capital (RARORAC)",
+      "Risk Adjusted Performance Management (RAPM)",
+      "Return on Risk Adjusted Capital (RORAC)"
+    ],
+    "answer": 0,
+    "explain": "RAROC 是一種衡量與管理風險的財務指標，也可用來評估為風險預留資金的合理性。"
+  },
+  {
+    "id": "Q17",
+    "chapter": "BC Governance",
+    "q": "Which of the following is NOT a component of a centralized governance structure for Business Continuity and Risk Management?",
+    "choices": [
+      "Programs and Practices",
+      "Enablement",
+      "Effectiveness",
+      "Authenticity"
+    ],
+    "answer": 3,
+    "explain": "Authenticity 並非 Business Continuity 與 Risk Management 的治理結構核心要素。"
+  },
+  {
+    "id": "Q18",
+    "chapter": "DR Testing",
+    "q": "Amy was conducting a disaster recovery test at her clinic. In this test scenario, a real-life disaster was mimicked, and important aspects such as software, communication, procedures, and personnel were tested. Which test was Amy conducting?",
+    "choices": [
+      "Walkthrough Testing",
+      "Parallel Testing",
+      "Full Interruption Testing",
+      "Simulation Testing"
+    ],
+    "answer": 3,
+    "explain": "Simulation Testing 會模擬真實災害情境，但不實際中斷正式系統運作。"
+  },
+  {
+    "id": "Q19",
+    "chapter": "Standards",
+    "q": "Which of the following is a standard on disaster/emergency management and business continuity programs that defines disasters and provides provisions for prevention, mitigation, preparedness, response, continuity, and recovery?",
+    "choices": [
+      "NFPA 1600",
+      "INCITS 483-2012",
+      "ISO 27031",
+      "ISO 27005"
+    ],
+    "answer": 0,
+    "explain": "NFPA 1600 是針對災害與緊急事件管理及商業持續計畫的標準。"
+  },
+  {
+    "id": "Q20",
+    "chapter": "Server Roles",
+    "q": "Which of the following server categories stores the information about host accounts and implements security policies in its particular domain?",
+    "choices": [
+      "Global Catalog Servers",
+      "Domain Controller Servers",
+      "File Servers",
+      "IIS Servers"
+    ],
+    "answer": 1,
+    "explain": "Domain Controller 負責管理網域中的帳號資訊與安全性原則。"
+  },
+ {
+    "id": "Q21",
+    "chapter": "Storage / Networking",
+    "q": "Timothy works as a network administrator in a multinational organization. He decides to implement a dedicated network for sharing storage resources. He uses a ___ as it separates the storage units from the servers and the user network.",
+    "choices": [
+      "SCSA",
+      "NAS",
+      "SAN",
+      "SAS"
+    ],
+    "answer": 2,
+    "explain": "SAN（Storage Area Network）是專用的高速網路，用於將儲存設備與伺服器及使用者網路分離。"
+  },
+  {
+    "id": "Q22",
+    "chapter": "Virtualization / Backup",
+    "q": "Jack is a system administrator working in a data center, which operates thousands of the virtual servers running on the Microsoft's virtualization platform, Hyper-V. Jack's manager advises him to take a snapshot backup instead of a full backup of the virtual machines running on Hyper-V to save the backup time. Which native feature present in Hyper-V Manager should he use in this scenario?",
+    "choices": [
+      "Checkpoint Backup",
+      "Hyper-V Replication",
+      "System Backup",
+      "Snapshots Backup"
+    ],
+    "answer": 0,
+    "explain": "在 Hyper-V 中，Snapshot 功能稱為 Checkpoint，可快速保存虛擬機器當下狀態。"
+  },
+  {
+    "id": "Q23",
+    "chapter": "BC Planning",
+    "q": "Which of the following terms refers to the individual skills required to ensure the achievement of the terminal objectives?",
+    "choices": [
+      "Enabling Objectives",
+      "Routine Objectives",
+      "Qualitative Objectives",
+      "Development Objectives"
+    ],
+    "answer": 0,
+    "explain": "Enabling Objectives 指為達成最終目標（Terminal Objectives）所需的個別技能與能力。"
+  },
+  {
+    "id": "Q24",
+    "chapter": "Virtualization",
+    "q": "Matt needed multiple servers for his organization but could purchase only one. Using a particular technology, he created several logical servers on his sole physical server. Which technology did Matt make use?",
+    "choices": [
+      "Deduplication",
+      "Snapshot",
+      "Virtualization",
+      "Mirroring"
+    ],
+    "answer": 2,
+    "explain": "Virtualization 可在單一實體主機上建立多個邏輯伺服器（虛擬機）。"
+  },
+  {
+    "id": "Q25",
+    "chapter": "Storage / RAID",
+    "q": "Will is working as a Network Administrator. Management wants to maintain a backup of all the company data as soon as it starts operations. They decide to use a RAID backup storage technology for their data backup plan. Will sets up a pair of RAID disks so that all the data written to one disk is copied automatically to the other disk as well. Which RAID level is used here?",
+    "choices": [
+      "RAID 5",
+      "RAID 1",
+      "RAID 0",
+      "RAID 3"
+    ],
+    "answer": 1,
+    "explain": "RAID 1 使用磁碟鏡像（Mirroring），資料會同步寫入兩顆磁碟。"
+  },
+  {
+    "id": "Q26",
+    "chapter": "Active Directory / Recovery",
+    "q": "Zane is a server administrator. While doing the regular maintenance of the servers, she finds out that the Active Directory of one of the servers present in the domain is missing. Which restoration process would help Zane in this scenario given that all the other servers in the domain have their Active Directory intact?",
+    "choices": [
+      "Authoritative Active Directory Restoration",
+      "Non-Authoritative Active Directory Restoration",
+      "Data Replication",
+      "Server Migration"
+    ],
+    "answer": 1,
+    "explain": "Non-Authoritative Restoration 會從其他正常的網域控制站重新同步 Active Directory 資料。"
+  },
+  {
+    "id": "Q27",
+    "chapter": "Risk Management",
+    "q": "After Colin's organization had identified and prioritized the risks faced by the organization, Colin decided to implement certain strategies to manage risk (also known as risk response). Which of the following strategies is not a part of risk response?",
+    "choices": [
+      "Sharing",
+      "Safety",
+      "Mitigation",
+      "Acceptance"
+    ],
+    "answer": 1,
+    "explain": "Risk response 包含避免、減輕、轉移（分享）、接受，Safety 並非正式的風險回應策略。"
+  },
+  {
+    "id": "Q28",
+    "chapter": "Backup Technologies",
+    "q": "Cameron wanted to back up the data present on his organization's server in case a disaster struck and the data was lost. The software he used created a copy of the data using block level imaging. Which software did Cameron use?",
+    "choices": [
+      "Bare-metal Restore",
+      "Disk Imaging",
+      "Virtualization",
+      "Cloud Backup"
+    ],
+    "answer": 1,
+    "explain": "Disk Imaging 會以區塊層級（block-level）建立磁碟的完整映像備份。"
+  },
+  {
+    "id": "Q29",
+    "chapter": "Disaster Response",
+    "q": "Which of the following refers to a central command and control facility responsible for carrying out recovery actions, coordinating response and resources, and assuring the coherence of operations of an organization?",
+    "choices": [
+      "Emergency Operations Center",
+      "Colocation Facilities",
+      "Mobile Recovery Center",
+      "Crisis Command Center"
+    ],
+    "answer": 0,
+    "explain": "Emergency Operations Center（EOC）是負責統一指揮、協調與災後復原行動的中心。"
+  },
+  {
+    "id": "Q30",
+    "chapter": "DR Sites",
+    "q": "Annabeth's organization provides web-hosting services for several multinational corporations. Due to the nature of her clientele, her organization cannot afford to have any downtime. She opted for live replication of files at the backup site so that services could resume immediately if the primary site is destroyed. Which of the following backup sites did Annabeth opt for?",
+    "choices": [
+      "Hot Sites",
+      "Warm Sites",
+      "Colocation Facilities",
+      "Cold Sites"
+    ],
+    "answer": 0,
+    "explain": "Hot Site 具備即時資料同步與完整設備，可在災難發生後立即接手運作。"
+  },
+  {
+  "id": "Q31",
+  "chapter": "DR Planning",
+  "q": "Fred, the owner of an organization wanted to implement a plan that consists of well-planned actions to be adopted before, during, and after a catastrophic event. Which plan did Fred want to implement?",
+  "choices": [
+    "Risk Assessment",
+    "Business Recovery Plan",
+    "Data Backup Plan",
+    "IT Disaster Recovery Plan"
+  ],
+  "answer": 3,
+  "explain": "IT Disaster Recovery Plan 涵蓋災前、災中與災後的 IT 應變與復原行動。"
+},
+{
+  "id": "Q32",
+  "chapter": "Backup / Testing",
+  "q": "Which of the following techniques verifies that data is safe, secure, and readable after going through processes like update, restore, or retrieve?",
+  "choices": [
+    "Database Integrity Testing",
+    "Backup Integrity Testing",
+    "Database Authentication",
+    "Database Consolidation"
+  ],
+  "answer": 1,
+  "explain": "Backup Integrity Testing 用來確認備份後或還原後的資料是否完整且可讀。"
+},
+{
+  "id": "Q33",
+  "chapter": "BCP Testing",
+  "q": "In which of the following tests, is the entire BCP implemented?",
+  "choices": [
+    "Orientation Test",
+    "Functional Test",
+    "Simulation Test",
+    "Full-Scale Test"
+  ],
+  "answer": 3,
+  "explain": "Full-Scale Test 會完整實施整個 Business Continuity Plan。"
+},
+{
+  "id": "Q34",
+  "chapter": "Recovery Metrics",
+  "q": "ABC Investment Bank distributed chunks of client data across multiple global data centers to avoid total data loss or misuse. For this plan to work, a percentage of deviation should not exist between the actual and targeted business data. Which recovery metric best defines this percentage of deviation?",
+  "choices": [
+    "Recovery Service Resiliency (RSR)",
+    "Recovery Object Granularity (ROG)",
+    "Recovery Consistency Objective (RCO)",
+    "Recovery Location Scope (RLS)"
+  ],
+  "answer": 2,
+  "explain": "Recovery Consistency Objective (RCO) 用來衡量實際資料與目標資料狀態之間的偏差程度。"
+},
+{
+  "id": "Q35",
+  "chapter": "Risk Assessment",
+  "q": "Jonathan classified risks as Very Low, Low, Medium, High, and Very High. Which assessment method did he use?",
+  "choices": [
+    "Semi-Qualitative Risk Assessment",
+    "Quantitative Risk Assessment",
+    "Semi-Quantitative Risk Assessment",
+    "Qualitative Risk Assessment"
+  ],
+  "answer": 3,
+  "explain": "Qualitative Risk Assessment 使用描述性等級（如 High、Low）來分類風險。"
+},
+{
+  "id": "Q36",
+  "chapter": "Storage Resilience",
+  "q": "Which of the following terms refers to systems that maintain data and access to it despite malicious or accidental failures?",
+  "choices": [
+    "Survivable Storage System",
+    "Decentralized Computing",
+    "Mainframe Computer System",
+    "Mirroring"
+  ],
+  "answer": 0,
+  "explain": "Survivable Storage System 設計用來在各種故障情境下維持資料可用性。"
+},
+{
+  "id": "Q37",
+  "chapter": "Backup Types",
+  "q": "Kelly backs up only those files that were created or modified after the last backup. What type of backup is he using?",
+  "choices": [
+    "Normal backup",
+    "Full backup",
+    "Differential Backup",
+    "Incremental backup"
+  ],
+  "answer": 3,
+  "explain": "Incremental Backup 只備份自上一次備份後有變更的資料。"
+},
+{
+  "id": "Q38",
+  "chapter": "BC Concepts",
+  "q": "Which of the following terms refers to a set of tasks that organizations must continue throughout or resume rapidly after a disruptive incident?",
+  "choices": [
+    "Business Impact Analysis",
+    "Maximum Allowed Downtime (MAD)",
+    "Mission Essential Functions (MEF)",
+    "Risk Mitigation"
+  ],
+  "answer": 2,
+  "explain": "Mission Essential Functions（MEF）是災後必須持續或迅速恢復的關鍵任務。"
+},
+{
+  "id": "Q39",
+  "chapter": "DR Sites",
+  "q": "Jack rented server space in the same data center used by another organization to reduce cost. Which backup site did he opt for?",
+  "choices": [
+    "Colocation Facilities",
+    "Hot Sites",
+    "Cold Sites",
+    "Warm Sites"
+  ],
+  "answer": 0,
+  "explain": "Colocation Facilities 提供共享的實體設施（電力、冷卻、空間），成本相對較低。"
+},
+{
+  "id": "Q40",
+  "chapter": "DR Tiers",
+  "q": "Rachel wanted to implement a disaster recovery tier that backs up data over a WAN connection. Which disaster recovery tier did she choose?",
+  "choices": [
+    "Tier 0",
+    "Tier 6",
+    "Tier 5",
+    "Tier 3"
+  ],
+  "answer": 3,
+  "explain": "Tier 3 使用 WAN 進行資料備份與複寫，提供較高層級的復原能力。"
+},
+{
+  "id": "Q41",
+  "chapter": "Active Directory / Replication",
+  "q": "Which of the following methods keeps the SYSVOL folder synchronized inside multiple servers present on the same domain?",
+  "choices": [
+    "Failover",
+    "Distributed File System Replication",
+    "Data Backup",
+    "Load Balancing"
+  ],
+  "answer": 1,
+  "explain": "SYSVOL 資料夾在多台網域控制站之間是透過 DFS Replication（DFSR）來同步。"
+},
+{
+  "id": "Q42",
+  "chapter": "Virtualization / Cost Optimization",
+  "q": "Lisa's organization has multiple servers running different applications to keep them isolated. Most servers remain idle for long periods, leading to high costs. Which solution can reduce costs, optimize resource usage, and lower energy consumption?",
+  "choices": [
+    "Operating System Virtualization",
+    "Server Replication",
+    "Virtual Desktop Infrastructure",
+    "Server Virtualization"
+  ],
+  "answer": 3,
+  "explain": "Server Virtualization 能在較少的實體主機上執行多個虛擬伺服器，提升資源使用率並降低成本。"
+},
+{
+  "id": "Q43",
+  "chapter": "System Architecture",
+  "q": "Rick interconnected the individual computers of team members and removed the central server to balance processing load among all systems. Which architecture did Rick use?",
+  "choices": [
+    "Three Tier",
+    "N-Tier",
+    "Peer-to-Peer",
+    "Client-Server"
+  ],
+  "answer": 2,
+  "explain": "Peer-to-Peer 架構中，各節點彼此平等，能直接分擔處理與資源存取負載。"
+},
+{
+  "id": "Q44",
+  "chapter": "Backup Technologies",
+  "q": "Which of the following terms refers to a storage system consisting of hard disk drives that look and act like a physical tape library?",
+  "choices": [
+    "Disk-to-Disk (D2D)",
+    "Virtual Tape Library (VTL)",
+    "Mirroring",
+    "Snapshot"
+  ],
+  "answer": 1,
+  "explain": "Virtual Tape Library（VTL）使用磁碟模擬傳統磁帶庫的行為與介面。"
+},
+{
+  "id": "Q45",
+  "chapter": "DR Sites / Colocation",
+  "q": "Which of the following is NOT an advantage of colocation facilities?",
+  "choices": [
+    "Backup",
+    "Cooling",
+    "Economic Advantages",
+    "Recovery of Servers"
+  ],
+  "answer": 3,
+  "explain": "Colocation 提供設備空間、電力與冷卻，但不負責實際的伺服器復原。"
+},
+{
+  "id": "Q46",
+  "chapter": "Database Replication",
+  "q": "The IT department decided to copy data changes from the original database server to the replica server annually since the data was updated only once a year. Which solution did they implement?",
+  "choices": [
+    "Transactional Replication",
+    "SQL Server Replication",
+    "Merge Replication",
+    "Snapshot Replication"
+  ],
+  "answer": 3,
+  "explain": "Snapshot Replication 適用於資料變動不頻繁的情境，會定期複製整個資料狀態。"
+},
+{
+  "id": "Q47",
+  "chapter": "Storage / RAID",
+  "q": "Match the following RAID components with their functions:",
+  "choices": [
+    "1-iii, 2-v, 3-i, 4-iv",
+    "1-ii, 2-i, 3-iv, 4-iii",
+    "1-iv, 2-iii, 3-v, 4-ii",
+    "1-v, 2-iv, 3-ii, 4-ii"
+  ],
+  "answer": 1,
+  "explain": "本題依題目所給對照關係作答（無圖示，僅依選項判斷）。"
+},
+{
+  "id": "Q48",
+  "chapter": "DR Testing",
+  "q": "Joan conducted a disaster recovery test to confirm effectiveness, bottlenecks, and weaknesses in the plan through team member discussion. Which test was she conducting?",
+  "choices": [
+    "Parallel Testing",
+    "Walkthrough Testing",
+    "Simulation Testing",
+    "Full Interruption Testing"
+  ],
+  "answer": 1,
+  "explain": "Walkthrough Testing 透過討論方式檢視計畫流程與潛在問題。"
+},
+{
+  "id": "Q49",
+  "chapter": "Security Architecture",
+  "q": "When information availability increases in PASIS architecture, which feature decreases as a result?",
+  "choices": [
+    "Confidentiality",
+    "Durability",
+    "Nonrepudiation",
+    "Latency"
+  ],
+  "answer": 0,
+  "explain": "PASIS 架構提高可用性時，通常會犧牲部分資料機密性（Confidentiality）。"
+},
+{
+  "id": "Q50",
+  "chapter": "Data Transfer / DR",
+  "q": "XYZ Inc. transfers critical data from its primary site to a backup site using an FTP server. Which term best describes this process?",
+  "choices": [
+    "Electronic Vaulting",
+    "Disk Shadowing",
+    "Disk Duplexing",
+    "Manually copying the data files and transferring them to the remote site"
+  ],
+  "answer": 0,
+  "explain": "Electronic Vaulting 指透過網路將資料傳送至異地備份站點。"
+},
+
+{
+  "id": "Q51",
+  "chapter": "Resilience Concepts",
+  "q": "Which of the following terms refers to the ease with which technicians can resolve or replace failing components or systems?",
+  "choices": [
+    "Robustness",
+    "Redundancy",
+    "Reparability",
+    "Recoverability"
+  ],
+  "answer": 2,
+  "explain": "Reparability 指系統或元件在發生故障時，能被快速修復或更換的容易程度。"
+},
+{
+  "id": "Q52",
+  "chapter": "BCP Training",
+  "q": "Jack was setting up BCP training for employees who did not have a large role in the execution of the BCP. The training consisted of the framework, processes, and strategies involved in the plan. What is this training known as?",
+  "choices": [
+    "Scenario Training",
+    "Detailed Awareness Training",
+    "Simulation Training",
+    "Introductory Awareness Training"
+  ],
+  "answer": 3,
+  "explain": "Introductory Awareness Training 提供一般員工對 BCP 架構、流程與策略的基本認識。"
+},
+{
+  "id": "Q53",
+  "chapter": "Backup Types",
+  "q": "Jonah noticed that each daily backup took more storage space than the previous one when backing up data to an external hard disk. Which type of backup is being created?",
+  "choices": [
+    "Differential Backup",
+    "Online Data Backup",
+    "Full System Backup",
+    "Incremental Backup"
+  ],
+  "answer": 0,
+  "explain": "Differential Backup 會包含自上一次完整備份後所有變更的資料，因此備份檔案會越來越大。"
+},
+{
+  "id": "Q54",
+  "chapter": "Risk Management",
+  "q": "Owing to an impending cyclone, Jonas took measures to avoid or minimize the damage it could cause to his startup's operations. Under which classification do these measures fall?",
+  "choices": [
+    "Backup",
+    "Recovery",
+    "Prevention",
+    "Resumption"
+  ],
+  "answer": 2,
+  "explain": "Prevention 著重於在災害發生前採取行動，以避免或降低衝擊。"
+},
+{
+  "id": "Q55",
+  "chapter": "DR Testing",
+  "q": "Which disaster recovery plan testing method is very expensive and disrupts normal business operations?",
+  "choices": [
+    "Checklist Testing",
+    "Full Interruption Testing",
+    "Simulation Testing",
+    "Parallel Testing"
+  ],
+  "answer": 1,
+  "explain": "Full Interruption Testing 需要實際中斷正常營運，因此成本高且風險最大。"
+},
+{
+  "id": "Q56",
+  "chapter": "BCP Audit",
+  "q": "Gloria was auditing a BCP to determine whether operational resiliency and continuity were being encouraged, and whether the plan was overfunded or underfunded. Which BCP audit stage was she examining?",
+  "choices": [
+    "Management of Process Changes",
+    "Overall Testing of the Plan",
+    "Ongoing Program Management",
+    "Overall Program Governance"
+  ],
+  "answer": 3,
+  "explain": "Overall Program Governance 關注治理架構、資源配置與整體韌性策略。"
+},
+{
+  "id": "Q57",
+  "chapter": "BCP Training",
+  "q": "Emma was conducting scenario training, and participants were informed well in advance about the training taking place. Which training phase was being conducted?",
+  "choices": [
+    "Planning Phase",
+    "Warning Phase",
+    "Execution Phase",
+    "Review Phase"
+  ],
+  "answer": 1,
+  "explain": "Warning Phase 指參與人員事先被通知即將進行訓練。"
+},
+{
+  "id": "Q58",
+  "chapter": "Risk Assessment",
+  "q": "Which of the following terms measures the severity of the impact of a risk on a business?",
+  "choices": [
+    "Frequency",
+    "Recovery Time",
+    "Recovery Scale",
+    "Assessment Scale"
+  ],
+  "answer": 3,
+  "explain": "Assessment Scale 用來衡量風險對業務造成影響的嚴重程度。"
+},
+{
+  "id": "Q59",
+  "chapter": "Backup Strategy",
+  "q": "Alan wants to back up a few articles generated daily, but does not want the backup process to be time consuming. Which backup method best suits his needs?",
+  "choices": [
+    "Differential Backup",
+    "Incremental Backup",
+    "Full System Backup",
+    "Online Data Backup"
+  ],
+  "answer": 1,
+  "explain": "Incremental Backup 只備份自上一次備份後變更的資料，速度最快、停機時間最短。"
+},
+
+{
+  "id": "Q60",
+  "chapter": "Security Principles",
+  "q": "Which of the following terms refers to the system's ability to correctly serve the requests that it receives?",
+  "choices": [
+    "Nonrepudiation",
+    "Availability",
+    "Precaution",
+    "Integrity"
+  ],
+  "answer": 1,
+  "explain": "Availability 指系統在需要時能夠正常提供服務與回應請求的能力。"
+},
+{
+  "id": "Q61",
+  "chapter": "Risk Management Standards",
+  "q": "George identified and prioritized organizational risks (phishing, earthquakes, server crashes, electrical surges) as required by a risk management standard. Which standard is he trying to comply with?",
+  "choices": [
+    "ISO 27001",
+    "ISO/IEC 27005",
+    "INCITS 483-2012",
+    "ISO 27031"
+  ],
+  "answer": 1,
+  "explain": "ISO/IEC 27005 專注於資訊安全風險管理，包含風險識別、分析與優先順序設定。"
+},
+{
+  "id": "Q62",
+  "chapter": "Virtualization / Backup",
+  "q": "Phil implemented a method that regularly backed up a virtual machine and could restore the last saved architectural instance after a crash. Which backup method did he implement?",
+  "choices": [
+    "Disk-to-Disk (D2D)",
+    "Snapshot",
+    "Continuous Data Protection (CDP)",
+    "Mirroring"
+  ],
+  "answer": 1,
+  "explain": "Snapshot 可快速保存並回復虛擬機在特定時間點的狀態。"
+},
+{
+  "id": "Q63",
+  "chapter": "BC / ICT Readiness Standards",
+  "q": "Which standard provides a framework of methods and processes to improve an organization's ICT readiness to ensure business continuity?",
+  "choices": [
+    "INCITS 483-2012",
+    "ISO 27005",
+    "ISO 27031",
+    "ISO 22313"
+  ],
+  "answer": 2,
+  "explain": "ISO 27031 著重於 ICT readiness 以支援業務持續運作。"
+},
+{
+  "id": "Q64",
+  "chapter": "Testing Criteria",
+  "q": "Phoebe required at least 90% of test cases to pass for DR testing to be considered successful. What is this scenario known as?",
+  "choices": [
+    "Software Testing Life Cycle",
+    "Suspension Criteria",
+    "Exit Criteria",
+    "Entry Criteria"
+  ],
+  "answer": 2,
+  "explain": "Exit Criteria 定義測試完成與通過所需達成的條件。"
+},
+{
+  "id": "Q65",
+  "chapter": "Windows Server / AD",
+  "q": "What is the name of the shared directory in Microsoft Server OS that contains commonly shared and replicated public files of a domain?",
+  "choices": [
+    "Public Files",
+    "ADFS",
+    "inetpub",
+    "SYSVOL"
+  ],
+  "answer": 3,
+  "explain": "SYSVOL 目錄用於存放並在網域控制站間複寫的公用檔案與群組原則。"
+},
+{
+  "id": "Q66",
+  "chapter": "Windows Recovery",
+  "q": "Which Windows 10 feature preserves the system state including system files, installed applications, and settings?",
+  "choices": [
+    "System Backup",
+    "System Update",
+    "Failover replication",
+    "System Restore"
+  ],
+  "answer": 3,
+  "explain": "System Restore 可將系統回復到先前的還原點狀態。"
+},
+{
+  "id": "Q67",
+  "chapter": "Clustering",
+  "q": "Which cluster provides consistent file system images across servers, allowing simultaneous read/write to a single shared file system?",
+  "choices": [
+    "High-Performance Clusters",
+    "Storage Cluster",
+    "Failover Cluster",
+    "High-Availability Clusters"
+  ],
+  "answer": 1,
+  "explain": "Storage Cluster 提供共享檔案系統，支援多節點同時存取。"
+},
+{
+  "id": "Q68",
+  "chapter": "PASIS Architecture",
+  "q": "After implementing PASIS architecture, critical data became accessible only to authorized employees. Which PASIS feature enabled this?",
+  "choices": [
+    "Reaction",
+    "Confidentiality",
+    "Availability",
+    "Maintenance"
+  ],
+  "answer": 1,
+  "explain": "Confidentiality 確保資料僅能被授權人員存取。"
+},
+{
+  "id": "Q69",
+  "chapter": "DR Documentation",
+  "q": "Which disaster recovery component provides a pictorial representation of all disaster recovery processes?",
+  "choices": [
+    "Exclusions",
+    "Activation Procedures",
+    "System Description",
+    "Scope Statement"
+  ],
+  "answer": 2,
+  "explain": "System Description 通常包含系統架構與流程的圖示說明。"
+},
+{
+  "id": "Q70",
+  "chapter": "Storage Technologies",
+  "q": "Which term refers to a high-speed data transmission technique that provides access to consolidated block-level storage?",
+  "choices": [
+    "Network Attached Storage (NAS)",
+    "Storage Area Network (SAN)",
+    "Cloud Storage",
+    "Storage Virtualization"
+  ],
+  "answer": 1,
+  "explain": "SAN 提供高速、集中式的區塊層級儲存存取。"
+},
+{
+  "id": "Q71",
+  "chapter": "Backup Technologies",
+  "q": "Which storage technology captures real-time data changes and facilitates restore points and recovery?",
+  "choices": [
+    "Mirroring",
+    "Disk-to-Disk (D2D)",
+    "Virtual Tape Library (VTL)",
+    "Continuous Data Protection (CDP)"
+  ],
+  "answer": 3,
+  "explain": "CDP 以近乎即時的方式記錄資料變更，支援多個還原點。"
+},
+{
+  "id": "Q72",
+  "chapter": "BCP Testing",
+  "q": "Archie tested the BCP by mobilizing resources. Which specific test was he conducting?",
+  "choices": [
+    "Functional Test",
+    "Simulation Test",
+    "Checklist Test",
+    "Orientation Test"
+  ],
+  "answer": 0,
+  "explain": "Functional Test 會實際動員資源以驗證計畫的可行性。"
+},
+{
+  "id": "Q73",
+  "chapter": "Database Backup",
+  "q": "Which software backs up, restores, and recovers database files using database server sessions?",
+  "choices": [
+    "Disk Drill",
+    "RMAN",
+    "Recuva",
+    "Virtuozzo"
+  ],
+  "answer": 1,
+  "explain": "RMAN（Recovery Manager）是 Oracle 的資料庫備份與復原工具。"
+},
+{
+  "id": "Q74",
+  "chapter": "BC Terminology",
+  "q": "Which term refers to the recommencement of business functions as systems are gradually made available after a disaster?",
+  "choices": [
+    "Resume",
+    "Recover",
+    "Reduce",
+    "Return"
+  ],
+  "answer": 0,
+  "explain": "Resume 指業務功能在災後逐步恢復運作。"
+},
+{
+  "id": "Q75",
+  "chapter": "Disaster Management",
+  "q": "Jake prepared a plan identifying personnel accountable for research, development, and implementation of the disaster recovery plan. Which plan was this?",
+  "choices": [
+    "Disaster Recovery Plan",
+    "Disaster Management Plan",
+    "Business Continuity Plan",
+    "IT Recovery Plan"
+  ],
+  "answer": 1,
+  "explain": "Disaster Management Plan 著重於角色、責任與整體管理架構。"
+},
+{
+  "id": "Q76",
+  "chapter": "Storage Solutions",
+  "q": "Which storage technology provides centralized data storage and facilitates efficient backup and recovery across branches?",
+  "choices": [
+    "PAS",
+    "RAID",
+    "NAS",
+    "DAS"
+  ],
+  "answer": 2,
+  "explain": "NAS 提供集中式檔案存取，適合跨地點備份與復原。"
+},
+{
+  "id": "Q77",
+  "chapter": "Hyper-V Architecture",
+  "q": "Where can the VM Management Service be located in the Hyper-V architecture?",
+  "choices": [
+    "Parent Partition",
+    "Child Partition",
+    "Windows Kernel",
+    "Hypervisor Layer"
+  ],
+  "answer": 0,
+  "explain": "Hyper-V 的 VM 管理服務位於 Parent Partition。"
+},
+{
+  "id": "Q78",
+  "chapter": "DR Organization",
+  "q": "Which sub-team assigns research and carries out development and implementation of the disaster recovery plan?",
+  "choices": [
+    "Disaster Management Team Chairpersons",
+    "Disaster Management Team Coordinators",
+    "Disaster Management Team",
+    "Disaster Management Executive Committee"
+  ],
+  "answer": 0,
+  "explain": "Chairpersons 負責指派研究並監督計畫的開發與實施。"
+},
+{
+  "id": "Q79",
+  "chapter": "Server Roles",
+  "q": "After discovering corrupted hosting files, which server would Fred need to restore to get his website back online?",
+  "choices": [
+    "Catalog Server",
+    "IIS Server",
+    "Application Server",
+    "Database Server"
+  ],
+  "answer": 1,
+  "explain": "IIS Server 負責網站檔案與 Web 服務，需優先復原。"
+},
+{
+  "id": "Q80",
+  "chapter": "Computing Models",
+  "q": "Which term refers to a programming pattern where computers are clustered together in a distributed and parallel fashion?",
+  "choices": [
+    "Decentralized Computing",
+    "Cloud Computing",
+    "Grid Computing",
+    "Centralized Computing"
+  ],
+  "answer": 0,
+  "explain": "Decentralized Computing 將運算分散至多個節點並行處理。"
+},
+{
+  "id": "Q81",
+  "chapter": "Backup Types",
+  "q": "Which of the following terms refers to a backup that is taken when the database is offline?",
+  "choices": [
+    "Full System Backup",
+    "Hot Backup",
+    "Online Data Backup",
+    "Cold Backup"
+  ],
+  "answer": 3,
+  "explain": "Cold Backup 是在資料庫或系統離線狀態下進行的備份。"
+},
+{
+  "id": "Q82",
+  "chapter": "PASIS Architecture",
+  "q": "After an earthquake destroyed a few storage nodes, James was able to recover the data due to PASIS architecture. Which PASIS feature enabled this recovery?",
+  "choices": [
+    "Integrity",
+    "Availability",
+    "Reaction",
+    "Durability"
+  ],
+  "answer": 3,
+  "explain": "Durability 確保即使部分節點損毀，資料仍能被恢復。"
+},
+{
+  "id": "Q83",
+  "chapter": "Backup Methods",
+  "q": "Which backup method allows encrypted data access from any time and any location?",
+  "choices": [
+    "Cloud Backup",
+    "Hot Site Backup",
+    "Offsite Backup",
+    "Onsite Backup"
+  ],
+  "answer": 0,
+  "explain": "Cloud Backup 提供加密、遠端存取與高可用性。"
+},
+{
+  "id": "Q84",
+  "chapter": "Risk Management",
+  "q": "Fred installed generators, malware protection, and an eight-hour backup system to reduce identified risks. Which process did Fred go through?",
+  "choices": [
+    "Risk Mitigation",
+    "Risk Assessment",
+    "Risk Management",
+    "Risk Identification"
+  ],
+  "answer": 0,
+  "explain": "Risk Mitigation 著重於降低已識別風險的影響與可能性。"
+},
+{
+  "id": "Q85",
+  "chapter": "Recovery Metrics",
+  "q": "Which term measures the number of applications or data sets handled by the recovery solution and the maximum size of data it can store?",
+  "choices": [
+    "Recovery Location Scope (RLS)",
+    "Recovery Service Resiliency (RSR)",
+    "Recovery Point Objective (RPO)",
+    "Recovery Service Scalability (RSS)"
+  ],
+  "answer": 3,
+  "explain": "Recovery Service Scalability（RSS）衡量復原解決方案的擴充能力。"
+},
+{
+  "id": "Q86",
+  "chapter": "PASIS Architecture",
+  "q": "Which components does PASIS architecture integrate to provide survivable data storage?",
+  "choices": [
+    "Centralized Computing, Data Redundancy and Encoding",
+    "Centralized Storage Systems, Deduplication and Mirroring",
+    "Decentralized Storage Systems, Data Redundancy and Encoding, and Dynamic Self-Maintenance",
+    "Distributed Computing, Data Redundancy and Encoding, and Dynamic Self-Maintenance"
+  ],
+  "answer": 2,
+  "explain": "PASIS 整合去中心化儲存、資料備援與編碼，以及動態自我維護能力。"
+},
+{
+  "id": "Q87",
+  "chapter": "Disaster Recovery",
+  "q": "Which term refers to the ability to restore data and applications if infrastructure is damaged or destroyed due to a disaster?",
+  "choices": [
+    "Recovery Management",
+    "Disaster Recovery",
+    "Data Recovery",
+    "Application Recovery"
+  ],
+  "answer": 1,
+  "explain": "Disaster Recovery 著重於災後系統、資料與應用程式的復原能力。"
+},
+{
+  "id": "Q88",
+  "chapter": "Recovery Metrics",
+  "q": "Which term defines the maximum acceptable duration that a business process can be disrupted before severe consequences occur?",
+  "choices": [
+    "Recovery Point Objective (RPO)",
+    "Work Recovery Time (WRT)",
+    "Maximum Tolerable Period of Disruption (MTPOD)",
+    "Recovery Time Objective (RTO)"
+  ],
+  "answer": 2,
+  "explain": "MTPOD 表示業務可容忍的最長中斷時間。"
+},
+{
+  "id": "Q89",
+  "chapter": "BC Standards",
+  "q": "Which standard guides organizations in establishing, implementing, and maintaining a formal Business Impact Analysis (BIA) process?",
+  "choices": [
+    "ISO/IEC 27031",
+    "ISO/TS 22317",
+    "ISO/IEC 27005",
+    "AS/NZS 5050"
+  ],
+  "answer": 1,
+  "explain": "ISO/TS 22317 專門針對 Business Impact Analysis 提供指引。"
+},
+{
+  "id": "Q90",
+  "chapter": "Data Center Concepts",
+  "q": "Which term refers to a data storage and processing facility that is virtualized and provided as a service?",
+  "choices": [
+    "Cloud-based Storage",
+    "Software Defined Data Center",
+    "Virtual Machines",
+    "Data Virtualization"
+  ],
+  "answer": 1,
+  "explain": "Software Defined Data Center 將運算、儲存與網路全面虛擬化並以服務形式提供。"
+},
+{
+  "id": "Q91",
+  "chapter": "Storage Technologies",
+  "q": "Which term refers to a dedicated server also used for file storage and sharing?",
+  "choices": [
+    "Network Attached Storage (NAS)",
+    "Data Virtualization",
+    "Storage Area Network (SAN)",
+    "Cloud Storage"
+  ],
+  "answer": 0,
+  "explain": "NAS 是專門用於檔案儲存與分享的伺服器。"
+},
+{
+  "id": "Q92",
+  "chapter": "Cisco IOS",
+  "q": "Which Cisco IOS CLI command copies the router configuration to an FTP server?",
+  "choices": [
+    "copy running configuration tftp",
+    "backup running configuration ftp",
+    "backup running configuration ftp",
+    "copy running configuration ftp"
+  ],
+  "answer": 3,
+  "explain": "copy running-config ftp 可將目前設定備份到 FTP 伺服器。"
+},
+{
+  "id": "Q93",
+  "chapter": "Virtualization Networking",
+  "q": "Slow VM-to-VM communication caused by poor VMQ handling due to NIC restrictions can be resolved by doing what?",
+  "choices": [
+    "Improve network storage performance",
+    "None of these",
+    "Increase network bandwidth",
+    "Update the NIC driver"
+  ],
+  "answer": 3,
+  "explain": "更新 NIC Driver 可改善 VMQ 的處理效能。"
+},
+{
+  "id": "Q94",
+  "chapter": "Risk Analysis",
+  "q": "Which risk evaluation method considers probability and financial impact, such as increasing failure chances due to fire hazards?",
+  "choices": [
+    "Risk Valuation",
+    "Risk Adjusted Return on Capital (RAROC)",
+    "Value at Risk",
+    "Return on Risk Adjusted Capital (RORAC)"
+  ],
+  "answer": 2,
+  "explain": "Value at Risk（VaR）用於量化在特定情境下的潛在損失。"
+},
+{
+  "id": "Q95",
+  "chapter": "Post-Disaster Activities",
+  "q": "Which term refers to repairing an old site or setting up a new alternate site after a disaster?",
+  "choices": [
+    "Restoration",
+    "Business Continuity",
+    "Resumption",
+    "Response"
+  ],
+  "answer": 0,
+  "explain": "Restoration 指修復或重建受災營運環境。"
+},
+{
+  "id": "Q96",
+  "chapter": "Data Archiving",
+  "q": "Which archiving method involves recurring cooling and maintenance costs but allows easy access and cataloging?",
+  "choices": [
+    "Cloud-Based Archiving",
+    "Legacy Archiving",
+    "Optical Media Storage",
+    "On Premise Disk Based Archiving"
+  ],
+  "answer": 3,
+  "explain": "On-Premise Disk-Based Archiving 需要持續維護與冷卻成本。"
+},
+{
+  "id": "Q97",
+  "chapter": "High Availability",
+  "q": "Which solution allows a secondary server to automatically take over immediately when the primary server fails?",
+  "choices": [
+    "Point in Time Recovery",
+    "Database Replication",
+    "Failover",
+    "Deduplication"
+  ],
+  "answer": 2,
+  "explain": "Failover 可在主要系統故障時自動切換至備援系統。"
+},
+{
+  "id": "Q98",
+  "chapter": "System Architecture",
+  "q": "Which term refers to a client-server architecture merged with layered architecture?",
+  "choices": [
+    "Client-Server Architecture",
+    "Application Server-Tier Architecture",
+    "Tightly Coupled Architecture",
+    "N-Tier Architecture"
+  ],
+  "answer": 3,
+  "explain": "N-Tier Architecture 將系統分層，並採用 client-server 模型。"
+},
+{
+  "id": "Q99",
+  "chapter": "Business Economics",
+  "q": "Which term refers to the potential gain from the best alternative forgone when choosing between mutually exclusive options?",
+  "choices": [
+    "Cost Benefit Analysis",
+    "Fixed Cost",
+    "Business Impact Analysis",
+    "Opportunity Cost"
+  ],
+  "answer": 3,
+  "explain": "Opportunity Cost 是指放棄其他選擇所失去的潛在利益。"
+},
+{
+  "id": "Q100",
+  "chapter": "System Recovery",
+  "q": "Which MacBook feature allows restoring the system to a previous OS version after a faulty update?",
+  "choices": [
+    "Time Shift",
+    "Image Recovery",
+    "Snapshot",
+    "Time Machine"
+  ],
+  "answer": 3,
+  "explain": "Time Machine 可將 macOS 系統回復到先前的狀態。"
+},
+{
+  "id": "Q101",
+  "chapter": "Computing Systems",
+  "q": "Which of the following is a feature of mainframe computers?",
+  "choices": [
+    "Pluralism",
+    "Proven Reliability",
+    "Openness",
+    "Transparency"
+  ],
+  "answer": 1,
+  "explain": "Mainframe computers 以高度穩定性與 Proven Reliability 著稱。"
+},
+{
+  "id": "Q102",
+  "chapter": "Backup Types",
+  "q": "Which term refers to backing up files that have been modified or added since the last full backup?",
+  "choices": [
+    "Differential Backup",
+    "Online Data Backup",
+    "Incremental Backup",
+    "Full System Backup"
+  ],
+  "answer": 0,
+  "explain": "Differential Backup 會備份自上一次完整備份後的所有變更資料。"
+},
+{
+  "id": "Q103",
+  "chapter": "Business Impact Analysis",
+  "q": "Which term refers to evaluating potential interruptions in the working of a department due to failure of internal systems?",
+  "choices": [
+    "Team-wide BIA",
+    "Branch-wide BIA",
+    "Organization-wide BIA",
+    "Country-wide BIA"
+  ],
+  "answer": 1,
+  "explain": "Branch-wide BIA 聚焦於單一部門或分支單位的營運中斷影響。"
+},
+{
+  "id": "Q104",
+  "chapter": "Storage / RAID",
+  "q": "Which RAID level requires a minimum of six drives and provides high fault tolerance and high read/write speed?",
+  "choices": [
+    "RAID level 10",
+    "RAID level 5",
+    "RAID level 50",
+    "RAID level 1"
+  ],
+  "answer": 2,
+  "explain": "RAID 50 結合 RAID 5 與 RAID 0，至少需六顆磁碟。"
+},
+{
+  "id": "Q105",
+  "chapter": "Business Impact Analysis",
+  "q": "Which term refers to determining the potential impact of disruptive events on an organization's business processes?",
+  "choices": [
+    "Risk Assessment",
+    "Business Impact Analysis",
+    "Risk Management",
+    "Vulnerability Assessment"
+  ],
+  "answer": 1,
+  "explain": "Business Impact Analysis（BIA）專注於分析業務中斷的影響。"
+},
+{
+  "id": "Q106",
+  "chapter": "DR Services",
+  "q": "Which term refers to third-party services such as recovery infrastructure, real-time remote backup, and offsite replication?",
+  "choices": [
+    "Continuous Data Protection",
+    "Managed Disaster Recovery",
+    "Tape Vaulting",
+    "Disk Shadowing"
+  ],
+  "answer": 1,
+  "explain": "Managed Disaster Recovery 由第三方提供完整災難復原服務。"
+},
+{
+  "id": "Q107",
+  "chapter": "BCP Training",
+  "q": "Which training program is meant for employees with important execution roles in BCP and provides frameworks, processes, and strategies?",
+  "choices": [
+    "Detailed Awareness Training",
+    "Introductory Awareness Training",
+    "Scenario Training",
+    "Simulation Training"
+  ],
+  "answer": 0,
+  "explain": "Detailed Awareness Training 針對核心執行人員進行深入訓練。"
+},
+{
+  "id": "Q108",
+  "chapter": "Windows Server Backup",
+  "q": "Which feature must be installed in Windows Server 2012 to enable backup and restoration on a file server?",
+  "choices": [
+    "Windows Server Backup, Administrative Tools",
+    "Server Migration, Microsoft Management Console",
+    "Windows Server Backup, Microsoft Management Console",
+    "Server Migration, Administrative Tool"
+  ],
+  "answer": 2,
+  "explain": "Windows Server Backup 需透過 Microsoft Management Console 進行管理。"
+},
+{
+  "id": "Q109",
+  "chapter": "BC Training Objectives",
+  "q": "Which term refers to the training milestones that must be achieved to meet the BCP training program's aim?",
+  "choices": [
+    "Routine Objectives",
+    "Development Objectives",
+    "Time-Related Objectives",
+    "Terminal Objectives"
+  ],
+  "answer": 3,
+  "explain": "Terminal Objectives 代表最終必須達成的訓練成果。"
+},
+{
+  "id": "Q110",
+  "chapter": "DR Tiers",
+  "q": "Which disaster recovery tier makes use of point-in-time copies?",
+  "choices": [
+    "Tier B",
+    "Tier 5",
+    "Tier 0",
+    "Tier 4"
+  ],
+  "answer": 3,
+  "explain": "Tier 4 使用 Point-in-Time Copies 進行資料復原。"
+},
+{
+  "id": "Q111",
+  "chapter": "Risk Analysis",
+  "q": "Polly estimated the magnitude of damage if sensitive information was leaked and compared it with upgrade cost. Which risk factor did she estimate?",
+  "choices": [
+    "Likelihood",
+    "Vulnerability",
+    "Impact",
+    "Hazard"
+  ],
+  "answer": 2,
+  "explain": "Impact 衡量風險事件對組織造成的潛在損失。"
+},
+{
+  "id": "Q112",
+  "chapter": "BC Strategy",
+  "q": "Which term refers to the blueprint that dictates how continuity and recovery from a disaster will be achieved?",
+  "choices": [
+    "Business Continuity Plan",
+    "Business Continuity Strategy",
+    "Business Continuity Management",
+    "Crisis Management"
+  ],
+  "answer": 1,
+  "explain": "Business Continuity Strategy 定義達成持續營運的整體戰略方向。"
+},
+{
+  "id": "Q113",
+  "chapter": "Linux Backup",
+  "q": "Which native Ubuntu option should Sam use to recover deleted files from a previous backup?",
+  "choices": [
+    "Shadow Copy",
+    "Snapshots",
+    "Déjà Dup",
+    "Checkpoints"
+  ],
+  "answer": 2,
+  "explain": "Déjà Dup 是 Ubuntu 內建的備份與還原工具。"
+},
+{
+  "id": "Q114",
+  "chapter": "Business Impact Analysis",
+  "q": "Which option must be considered by an organization when conducting BIA?",
+  "choices": [
+    "Transferring a business activity to a third-party",
+    "Time scales for assessment",
+    "Establishing alternate processes or redundancy",
+    "Ceasing or changing a business activity"
+  ],
+  "answer": 1,
+  "explain": "BIA 需考量時間尺度，以評估中斷對業務的影響。"
+},
+{
+  "id": "Q115",
+  "chapter": "DR Tiers",
+  "q": "Which disaster recovery tier provides automated recovery of data and applications?",
+  "choices": [
+    "Tier 2",
+    "Tier 4",
+    "Tier B",
+    "Tier 7"
+  ],
+  "answer": 3,
+  "explain": "Tier 7 提供最高層級的自動化復原能力。"
+},
+{
+  "id": "Q116",
+  "chapter": "Business Impact Analysis",
+  "q": "Which of the following is NOT an objective of Business Impact Analysis?",
+  "choices": [
+    "Identify RTO and RPO for each process",
+    "Assess the impact caused by a threat",
+    "Identify critical resources",
+    "Establish recovery order of business functions"
+  ],
+  "answer": 3,
+  "explain": "建立復原順序通常屬於復原規劃階段，而非 BIA 本身。"
+},
+{
+  "id": "Q117",
+  "chapter": "Recovery Metrics",
+  "q": "What term defines the time within which the primary server must be restored to avoid business disruption?",
+  "choices": [
+    "Recovery Time Objective (RTO)",
+    "Recovery Point Objective (RPO)",
+    "Maximum Tolerable Downtime (MTD)",
+    "Work Recovery Time (WRT)"
+  ],
+  "answer": 0,
+  "explain": "RTO 定義系統必須在多短時間內恢復運作。"
+},
+{
+  "id": "Q118",
+  "chapter": "System Recovery",
+  "q": "Which term refers to bringing a system's application and data back to a previous state within an acceptable time frame?",
+  "choices": [
+    "System Migration",
+    "System Replication",
+    "System Backup",
+    "System Recovery"
+  ],
+  "answer": 3,
+  "explain": "System Recovery 包含資料與應用程式的復原作業。"
+},
+{
+  "id": "Q119",
+  "chapter": "Vulnerability Assessment",
+  "q": "Which is the correct order of steps for conducting vulnerability assessment?",
+  "choices": [
+    "b, d, c, a",
+    "b, c, d, a",
+    "d, b, a, c",
+    "c, a, d, b"
+  ],
+  "answer": 2,
+  "explain": "正確流程為：列出威脅 → 評估機率 → 評估影響 → 評估可用資源。"
+},
+{
+  "id": "Q120",
+  "chapter": "Impact Analysis",
+  "q": "Which type of impact best describes loss of morale and reduced productivity after a data breach?",
+  "choices": [
+    "Quantitative Impact",
+    "Qualitative Impact",
+    "Semi-Qualitative Impact",
+    "Industrial Impact"
+  ],
+  "answer": 1,
+  "explain": "Qualitative Impact 描述非金錢層面的影響，如士氣與聲譽。"
+},
+{
+  "id": "Q121",
+  "chapter": "BCP Standards",
+  "q": "The internal audit of the BCP takes place so as to make sure the plan conforms to which particular standard?",
+  "choices": [
+    "ISO 22313",
+    "ISO/IEC 27031:2011",
+    "ISO 22301:2012",
+    "ISO/IEC 27005:2011"
+  ],
+  "answer": 2,
+  "explain": "ISO 22301:2012 是商業持續管理系統（BCMS）的核心標準，BCP 內部稽核需符合此標準。"
+},
+{
+  "id": "Q122",
+  "chapter": "Backup Types",
+  "q": "Matt needs to back up critical data for a real-time system without any downtime. Which backup technique can help him overcome this challenge?",
+  "choices": [
+    "Incremental Backup",
+    "Online Data Backup",
+    "Cold Backup",
+    "Hot Backup"
+  ],
+  "answer": 3,
+  "explain": "Hot Backup 可在系統持續運作的情況下進行備份，適合即時系統。"
+},
+{
+  "id": "Q123",
+  "chapter": "High Availability",
+  "q": "Jack implemented a solution that unified computers and servers into a single computing resource and protected against application, server, software, and site failures. Which solution did he implement?",
+  "choices": [
+    "Mirroring",
+    "Deduplication",
+    "Server Clustering",
+    "Failover"
+  ],
+  "answer": 2,
+  "explain": "Server Clustering 提供可擴充性與高可用性，能因應多種失效情境。"
+},
+{
+  "id": "Q124",
+  "chapter": "Data Protection Concepts",
+  "q": "Which term refers to a graphical representation of data protection services designed to balance protection cost against data loss?",
+  "choices": [
+    "3DR",
+    "Continuous Data Protection",
+    "Data Backup",
+    "Data Protection Continuum"
+  ],
+  "answer": 3,
+  "explain": "Data Protection Continuum 以視覺化方式呈現不同資料保護層級與成本取捨。"
+},
+{
+  "id": "Q125",
+  "chapter": "Backup Techniques",
+  "q": "Which term refers to using a full backup and then modifying it with one or more incremental backups?",
+  "choices": [
+    "Incremental Forever Backup",
+    "Differential Backup",
+    "Incremental Backup",
+    "Synthetic Backup"
+  ],
+  "answer": 3,
+  "explain": "Synthetic Backup 會將完整備份與後續增量備份合成新的完整備份。"
+},
+{
+  "id": "Q126",
+  "chapter": "BCP Testing",
+  "q": "Roger conducted a BCP test that simulated a specific disaster scenario to test the plan. Which test was he using?",
+  "choices": [
+    "Checklist Test",
+    "Orientation Test",
+    "Simulation Test",
+    "Tabletop Test"
+  ],
+  "answer": 2,
+  "explain": "Simulation Test 會模擬特定災害情境來驗證 BCP 的有效性。"
+},
+{
+  "id": "Q127",
+  "chapter": "System Scalability",
+  "q": "Joan added extra virtual memory to handle a spike in traffic and reduce unacceptable delays. What is this feature called?",
+  "choices": [
+    "Monotonicity",
+    "Transparency",
+    "Openness",
+    "Scalability"
+  ],
+  "answer": 3,
+  "explain": "Scalability 指系統能隨需求增加而擴充資源以維持效能。"
+},
+{
+  "id": "Q128",
+  "chapter": "Clustering",
+  "q": "Which cluster uses mounted file systems to read and write data?",
+  "choices": [
+    "Failover Cluster",
+    "Storage Cluster",
+    "High-Availability Cluster",
+    "High-Performance Clusters"
+  ],
+  "answer": 1,
+  "explain": "Storage Cluster 透過掛載的共享檔案系統提供多節點存取。"
+},
+{
+  "id": "Q129",
+  "chapter": "System Architecture",
+  "q": "Which three components define the three-tier architecture in decentralized computing?",
+  "choices": [
+    "Client, Peer-to-Peer, and Application",
+    "Application, Peer-to-Peer, and Tightly Coupled",
+    "Client, Application Server, and Database Server",
+    "Tightly Coupled, Client, and Peer-to-Peer"
+  ],
+  "answer": 0,
+  "explain": "題目依其定義採用 Client、Peer-to-Peer 與 Application 作為三層架構。"
+},
+{
+  "id": "Q130",
+  "chapter": "Data Recovery",
+  "q": "The IT team restored a completely new laptop with no OS using backups to return it to the last known state automatically. Which recovery method was used?",
+  "choices": [
+    "System Restore",
+    "Mirroring",
+    "Bare Metal Recovery",
+    "System Image Recovery"
+  ],
+  "answer": 2,
+  "explain": "Bare Metal Recovery 可在空白硬體上完整還原系統、應用程式與資料。"
+},
+{
+  "id": "Q131",
+  "chapter": "Risk Concepts",
+  "q": "Which of the following terms refers to any circumstance with the potential to disrupt or degrade the quality of operations or assets?",
+  "choices": [
+    "Threat",
+    "Vulnerability",
+    "Hazard",
+    "Impact"
+  ],
+  "answer": 0,
+  "explain": "Threat 指任何可能對組織營運或資產造成破壞的潛在因素。"
+},
+{
+  "id": "Q132",
+  "chapter": "Data Management",
+  "q": "Which term refers to a collection of historical records specifically selected for long-term retention and future reference?",
+  "choices": [
+    "Data Archiving",
+    "Data Backup",
+    "Data Deletion",
+    "Data Restore"
+  ],
+  "answer": 0,
+  "explain": "Data Archiving 用於長期保存具有參考價值的歷史資料。"
+},
+{
+  "id": "Q133",
+  "chapter": "Virtualization Security",
+  "q": "Which technical process provides additional security to virtual machines by disabling unnecessary interfaces, devices, ports, and services?",
+  "choices": [
+    "Hardening",
+    "Restriction of Physical Access",
+    "Defense-in-Depth",
+    "Isolation of Security Functions"
+  ],
+  "answer": 0,
+  "explain": "Hardening 透過移除不必要的服務與介面來降低攻擊面。"
+},
+{
+  "id": "Q134",
+  "chapter": "Virtualization",
+  "q": "Which virtualization method requires software such as containers or virtual engines to run?",
+  "choices": [
+    "Desktop Virtualization",
+    "OS-based Virtualization",
+    "Data Virtualization",
+    "Network Virtualization"
+  ],
+  "answer": 1,
+  "explain": "OS-based Virtualization 使用容器或虛擬引擎在同一作業系統上執行多個環境。"
+},
+{
+  "id": "Q135",
+  "chapter": "Performance Metrics",
+  "q": "Which term refers to the delay experienced by a system while serving a request?",
+  "choices": [
+    "Latency",
+    "Nonrepudiation",
+    "Reaction",
+    "Durability"
+  ],
+  "answer": 0,
+  "explain": "Latency 用來描述系統回應請求時的延遲時間。"
+},
+{
+  "id": "Q136",
+  "chapter": "Windows Recovery",
+  "q": "Which command should be used to rebuild the Boot Configuration Data (BCD) after boot manager corruption?",
+  "choices": [
+    "repadmin /showrepl",
+    "sfc /scannow",
+    "ntdsutil",
+    "Bootrec /RebuildBCD"
+  ],
+  "answer": 3,
+  "explain": "Bootrec /RebuildBCD 可修復或重建開機設定資料。"
+},
+{
+  "id": "Q137",
+  "chapter": "Data Management",
+  "q": "What can be done to reduce redundant backups, save storage space, and minimize bandwidth usage?",
+  "choices": [
+    "Data Remanence",
+    "Failover",
+    "Data Erasure",
+    "Deduplication"
+  ],
+  "answer": 3,
+  "explain": "Deduplication 可消除重複資料，降低儲存與頻寬使用。"
+},
+{
+  "id": "Q138",
+  "chapter": "BC Testing",
+  "q": "What is the main objective of a Business Continuity test plan?",
+  "choices": [
+    "To demonstrate proficiency in management response",
+    "Not threaten normal business operations",
+    "To diverge from the test storyboard",
+    "To ensure the plan is accurate and relevant under adverse circumstances"
+  ],
+  "answer": 3,
+  "explain": "BC 測試的核心目標是確認計畫在不利情況下仍然正確且可行。"
+},
+{
+  "id": "Q139",
+  "chapter": "PASIS Architecture",
+  "q": "When information confidentiality increases in PASIS architecture, what else also increases as a direct result?",
+  "choices": [
+    "Reaction",
+    "Durability",
+    "Latency",
+    "Storage Requirement"
+  ],
+  "answer": 3,
+  "explain": "提高機密性通常需要更多資料分片與編碼，進而增加儲存需求。"
+},
+{
+  "id": "Q140",
+  "chapter": "BCP Training",
+  "q": "In which scenario training phase is a debrief conducted to obtain participant feedback?",
+  "choices": [
+    "Warning Phase",
+    "Execution Phase",
+    "Planning Phase",
+    "Review Phase"
+  ],
+  "answer": 3,
+  "explain": "Review Phase 用於回顧訓練並蒐集回饋。"
+},
+{
+  "id": "Q141",
+  "chapter": "Virtualization Standards",
+  "q": "Which virtualization standard is specified by the Distributed Management Task Force (DMTF)?",
+  "choices": [
+    "Cloud API",
+    "Open Virtualization Format (OVF)",
+    "Cloud Security Alliance (CSA)",
+    "PCI Data Security Standard (PCI DSS)"
+  ],
+  "answer": 1,
+  "explain": "OVF 是由 DMTF 制定的虛擬化標準。"
+},
+{
+  "id": "Q142",
+  "chapter": "DR Sites",
+  "q": "Which term refers to a movable operating environment that can be set up at any location using portable units?",
+  "choices": [
+    "Colocation Facilities",
+    "Cold Site",
+    "Crisis Command Center",
+    "Mobile Recovery Center"
+  ],
+  "answer": 3,
+  "explain": "Mobile Recovery Center 可快速部署至任何地點。"
+},
+{
+  "id": "Q143",
+  "chapter": "DR Tiers",
+  "q": "In which disaster recovery tier is data backed up with a hot site?",
+  "choices": [
+    "Tier 2",
+    "Tier 5",
+    "Tier 1",
+    "Tier 4"
+  ],
+  "answer": 0,
+  "explain": "Tier 2 通常搭配熱備援站點（Hot Site）。"
+},
+{
+  "id": "Q144",
+  "chapter": "DR Organization",
+  "q": "Which responsibility best fits the role of a disaster recovery coordinator?",
+  "choices": [
+    "Day-to-day management control over execution and maintenance of the DR program",
+    "Specification and design of all technology-based DR solutions",
+    "Executive authority over the DR program",
+    "DR planning verification and compliance"
+  ],
+  "answer": 0,
+  "explain": "DR 協調員負責日常執行與維護管理。"
+},
+{
+  "id": "Q145",
+  "chapter": "Recovery Management Model",
+  "q": "Which layer provides centralized control of data protection technologies such as replication and backup?",
+  "choices": [
+    "Analytics and Reporting Layer",
+    "Protection Technologies Layer",
+    "Testing Simulation Layer",
+    "Common Management Layer"
+  ],
+  "answer": 3,
+  "explain": "Common Management Layer 提供統一的管理與控制能力。"
+},
+{
+  "id": "Q146",
+  "chapter": "Virtualization Storage",
+  "q": "After deleting snapshots but still lacking free space, what should be done to reclaim storage space?",
+  "choices": [
+    "Uninstall the hypervisor",
+    "Shut down or restart the virtual machine",
+    "Delete the virtual machine database",
+    "Delete the child disk of the snapshots"
+  ],
+  "answer": 1,
+  "explain": "重新啟動或關閉 VM 可觸發實際釋放快照占用的空間。"
+},
+{
+  "id": "Q147",
+  "chapter": "Data Loss",
+  "q": "What type of data loss occurs when a damaged hard drive renders data unreadable?",
+  "choices": [
+    "Logical",
+    "Natural Disaster",
+    "Physical",
+    "Data Corruption"
+  ],
+  "answer": 2,
+  "explain": "硬體損壞造成的資料遺失屬於 Physical data loss。"
+},
+{
+  "id": "Q148",
+  "chapter": "Business Continuity",
+  "q": "Which holistic management process identifies threats, impacts, and builds organizational resilience?",
+  "choices": [
+    "Business Impact Analysis",
+    "Risk Management",
+    "Business Continuity Management",
+    "Disaster Recovery"
+  ],
+  "answer": 2,
+  "explain": "BCM 是涵蓋風險、韌性與回應能力的整體管理流程。"
+},
+{
+  "id": "Q149",
+  "chapter": "Crisis Management",
+  "q": "Which term refers to applying strategies to deal with sudden and significant undesirable events?",
+  "choices": [
+    "Business Impact Analysis",
+    "Application Recovery",
+    "Risk Assessment",
+    "Crisis Management"
+  ],
+  "answer": 3,
+  "explain": "Crisis Management 專注於即時應對重大突發事件。"
+},
+{
+  "id": "Q150",
+  "chapter": "3DR",
+  "q": "Which is also known as the doomsday recovery level in 3DR?",
+  "choices": [
+    "Backup of Data",
+    "Archiving of Data",
+    "Local Data Protection",
+    "Remote Backup of Data Protection"
+  ],
+  "answer": 1,
+  "explain": "Archiving of Data 是 3DR 中最低復原層級，也稱為 Doomsday level。"
+},
+{
+  "id": "Q151",
+  "chapter": "Recovery Management",
+  "q": "Which term refers to bringing systems, applications, and data back to normal conditions within an acceptable time frame?",
+  "choices": [
+    "Risk Management",
+    "Business Continuity Management",
+    "Disaster Recovery Management",
+    "Recovery Management"
+  ],
+  "answer": 3,
+  "explain": "Recovery Management 著重於實際復原活動的管理。"
+},
+{
+  "id": "Q152",
+  "chapter": "DR Sites",
+  "q": "Craig pre-installed hardware and configured restoration settings at a backup site to recover within a few days. Which site did he choose?",
+  "choices": [
+    "Warm Sites",
+    "Cold Sites",
+    "Hot Sites",
+    "Colocation Facilities"
+  ],
+  "answer": 0,
+  "explain": "Warm Site 預先配置設備，可在數天內恢復營運。"
+},
+{
+  "id": "Q153",
+  "chapter": "Business Impact Analysis",
+  "q": "Which of the following is NOT a component of Business Impact Analysis?",
+  "choices": [
+    "Safety",
+    "Formation of Committee",
+    "Feedback",
+    "Executive Sponsorship"
+  ],
+  "answer": 0,
+  "explain": "Safety 並非 BIA 的核心組成要素。"
+}
+
+
+
+
+
+]

@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>EDRP 刷題工具</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans TC", Arial;
+      background: #0b1020;
+      color: #eaf0ff;
+    }
+    .wrap {
+      max-width: 920px;
+      margin: 28px auto;
+      padding: 0 16px;
+    }
+    h1 { margin: 0 0 14px; }
+
+    .card {
+      background: #121a33;
+      border-radius: 14px;
+      padding: 16px;
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .meta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: rgba(234,240,255,.75);
+    }
+
+    .qtitle {
+      font-size: 18px;
+      line-height: 1.55;
+      margin: 6px 0 12px;
+      white-space: pre-wrap;
+    }
+
+    .choice {
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 10px;
+      padding: 10px 12px;
+      margin-top: 10px;
+      cursor: pointer;
+      background: rgba(255,255,255,.03);
+      user-select: none;
+      line-height: 1.5;
+    }
+    .choice:hover { border-color: rgba(159,176,255,.6); }
+    .choice.correct {
+      border-color: rgba(52,211,153,.9);
+      background: rgba(52,211,153,.12);
+    }
+    .choice.wrong {
+      border-color: rgba(251,113,133,.9);
+      background: rgba(251,113,133,.12);
+    }
+    .choice.disabled {
+      cursor: default;
+      opacity: .95;
+    }
+
+    button {
+      margin-top: 14px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,.12);
+      cursor: pointer;
+      background: rgba(255,255,255,.06);
+      color: #eaf0ff;
+      font-size: 14px;
+    }
+    button:hover { filter: brightness(1.1); }
+
+    .toolbar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .feedback {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255,255,255,.10);
+      display: none;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      margin-right: 8px;
+    }
+    .ok { background: rgba(52,211,153,.14); color: rgb(52,211,153); }
+    .bad { background: rgba(251,113,133,.14); color: rgb(251,113,133); }
+
+    .explain {
+      margin-top: 10px;
+      white-space: pre-wrap;
+      line-height: 1.55;
+      color: rgba(234,240,255,.92);
+    }
+
+    details { margin-top: 18px; }
+    summary { cursor: pointer; color: rgba(159,176,255,.9); }
+
+    textarea {
+      width: 100%;
+      height: 160px;
+      margin-top: 8px;
+      background: rgba(255,255,255,.04);
+      color: #eaf0ff;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 10px;
+      padding: 10px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body>
+<div class="wrap">
+  <h1>EDRP 刷題工具</h1>
+
+  <div class="card">
+    <div class="meta">
+      <span id="pos"></span>
+      <span id="qid"></span>
+      <span id="chapter"></span>
+      <span id="mode"></span>
+    </div>
+
+    <div class="qtitle" id="question"></div>
+    <div id="choices"></div>
+
+    <div class="feedback" id="feedback"></div>
+
+    <div class="toolbar">
+      <button onclick="next()">下一題</button>
+      <button onclick="toggleWrongMode()">只練習本次錯題</button>
+      <button onclick="resetSession()">重置本次錯題</button>
+    </div>
+  </div>
+
+  <details>
+    <summary>匯入 / 匯出題庫（JSON）</summary>
+
+    <p>方法一：貼上 JSON</p>
+    <textarea id="bankArea"></textarea>
+    <button onclick="importFromText()">貼上匯入（取代）</button>
+
+    <hr>
+
+    <p>方法二：從檔案匯入（.json）</p>
+    <input type="file" id="fileInput" accept=".json">
+    <br>
+    <button onclick="importFromFile()">檔案匯入（取代）</button>
+
+    <hr>
+
+    <button onclick="exportBank()">匯出目前題庫</button>
+  </details>
+</div>
+
+<script>
+/* ========= 工具 ========= */
+function toLetter(i) { return String.fromCharCode(65 + i); }
+function esc(s) {
+  return String(s ?? "")
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
+
+/* ========= 狀態 ========= */
+let bank = [
+  {
+    id: "DEMO",
+    chapter: "Demo",
+    q: "這是一題示範題：只要選錯一次，就會進入本次錯題清單。",
+    choices: ["了解", "沒問題", "可以開始了", "GO"],
+    answer: 0,
+    explain: "這題只是示範用，匯入你自己的題庫即可。"
+  }
+];
+
+let order = [];
+let idx = 0;
+let locked = false;
+let wrongOnly = false;
+
+// ⭐ 本次作答錯題（session-based）
+let sessionWrongs = {};
+
+/* ========= 核心 ========= */
+function rebuildOrder() {
+  order = bank
+    .map((_, i) => i)
+    .filter(i => !wrongOnly || sessionWrongs[bank[i].id]);
+
+  idx = 0;
+}
+
+function render() {
+  if (order.length === 0) {
+    document.getElementById("question").textContent =
+      wrongOnly ? "目前尚未有本次錯題 🎉" : "題庫是空的";
+    document.getElementById("choices").innerHTML = "";
+    document.getElementById("pos").textContent = "";
+    document.getElementById("qid").textContent = "";
+    document.getElementById("chapter").textContent = "";
+    document.getElementById("mode").textContent = wrongOnly ? "· 本次錯題模式" : "";
+    document.getElementById("feedback").style.display = "none";
+    return;
+  }
+
+  const q = bank[order[idx]];
+  locked = false;
+
+  document.getElementById("pos").textContent = `題目 ${idx + 1}/${order.length}`;
+  document.getElementById("qid").textContent = q.id ? `· ${q.id}` : "";
+  document.getElementById("chapter").textContent = q.chapter ? `· ${q.chapter}` : "";
+  document.getElementById("mode").textContent = wrongOnly ? "· 本次錯題模式" : "";
+
+  document.getElementById("question").textContent = q.q;
+
+  const c = document.getElementById("choices");
+  c.innerHTML = "";
+  q.choices.forEach((t, i) => {
+    const d = document.createElement("div");
+    d.className = "choice";
+    d.innerHTML = `<b>${toLetter(i)}.</b> ${esc(t)}`;
+    d.onclick = () => choose(i);
+    c.appendChild(d);
+  });
+
+  const fb = document.getElementById("feedback");
+  fb.style.display = "none";
+  fb.innerHTML = "";
+}
+
+function choose(i) {
+  if (locked) return;
+  locked = true;
+
+  const q = bank[order[idx]];
+  const nodes = document.querySelectorAll(".choice");
+
+  nodes.forEach((n, k) => {
+    n.classList.add("disabled");
+    if (k === q.answer) n.classList.add("correct");
+    if (k === i && i !== q.answer) n.classList.add("wrong");
+  });
+
+  const isCorrect = (i === q.answer);
+
+  // ⭐ 只要錯一次，就記錄為本次錯題
+  if (!isCorrect) {
+    sessionWrongs[q.id] = true;
+  }
+
+  const fb = document.getElementById("feedback");
+  fb.style.display = "block";
+  fb.innerHTML = `
+    <div>
+      <span class="tag ${isCorrect ? "ok" : "bad"}">
+        ${isCorrect ? "答對" : "答錯"}
+      </span>
+      <span style="font-size:13px;color:rgba(234,240,255,.7)">
+        你的答案：${toLetter(i)} · 正解：${toLetter(q.answer)}
+      </span>
+    </div>
+    <div class="explain">${esc(q.explain || "（沒有解析）")}</div>
+  `;
+}
+
+function next() {
+  idx = (idx + 1) % order.length;
+  render();
+}
+
+function toggleWrongMode() {
+  wrongOnly = !wrongOnly;
+  rebuildOrder();
+  render();
+}
+
+function resetSession() {
+  if (!confirm("要清除本次所有錯題紀錄嗎？")) return;
+  sessionWrongs = {};
+  wrongOnly = false;
+  rebuildOrder();
+  render();
+}
+
+/* ========= 匯入 / 匯出 ========= */
+function validateBank(parsed) {
+  if (!Array.isArray(parsed)) throw new Error("題庫必須是 JSON 陣列");
+  parsed.forEach((it, n) => {
+    if (!it.q || !Array.isArray(it.choices) || typeof it.answer !== "number")
+      throw new Error(`第 ${n + 1} 題格式錯誤`);
+    if (it.answer < 0 || it.answer >= it.choices.length)
+      throw new Error(`第 ${n + 1} 題 answer 超出範圍`);
+  });
+}
+
+function importFromText() {
+  try {
+    const parsed = JSON.parse(document.getElementById("bankArea").value.trim());
+    validateBank(parsed);
+    bank = parsed;
+    sessionWrongs = {};
+    rebuildOrder();
+    render();
+    alert(`成功匯入 ${bank.length} 題`);
+  } catch (e) {
+    alert("匯入失敗：" + e.message);
+  }
+}
+
+function importFromFile() {
+  const input = document.getElementById("fileInput");
+  if (!input.files[0]) return alert("請先選擇檔案");
+
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      const parsed = JSON.parse(e.target.result);
+      validateBank(parsed);
+      bank = parsed;
+      sessionWrongs = {};
+      rebuildOrder();
+      render();
+      alert(`成功匯入 ${bank.length} 題`);
+    } catch (err) {
+      alert("匯入失敗：" + err.message);
+    }
+  };
+  reader.readAsText(input.files[0], "utf-8");
+}
+
+function exportBank() {
+  document.getElementById("bankArea").value = JSON.stringify(bank, null, 2);
+}
+
+/* ========= 初始化 ========= */
+rebuildOrder();
+render();
+</script>
+</body>
+</html>
